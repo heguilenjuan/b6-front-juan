@@ -4,6 +4,7 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base:'/b6-front-juan/',
   plugins: [react()],
   assetsInclude:["**/*.PNG"],
   resolve:{
