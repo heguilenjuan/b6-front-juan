@@ -1,0 +1,84 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.detail-product {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    height: 100vh;
+
+    @include breakpoint(sm) {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        max-width: 1200px;
+    }
+
+
+    &__image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__content {
+        width: 25%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        @include breakpoint(sm) {
+            width: auto;
+            padding-inline: 1rem;
+        }
+
+        h2 {
+            font-size: 5rem;
+            font-weight: 600;
+            color: $color-primary;
+
+            @include breakpoint(sm) {
+                text-align: center;
+                margin: 0;
+            }
+
+            /*             color:var(--text-color)
+ */
+        }
+
+        p {
+            width: 80%;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #b9b4b4;
+
+            @include breakpoint(sm) {
+                text-align: center;
+                width: 100%;
+            }
+
+
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        li {
+            list-style: none;
+        }
+    }
+
+    .price {
+        font-size: 4rem;
+        color: $color-secondary;
+
+        @include breakpoint(sm) {
+            text-align: center;
+            width: 100%;
+        }
+    }
+}

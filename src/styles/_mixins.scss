@@ -1,0 +1,33 @@
+// 📌 Mixin para tipografía responsiva
+@mixin responsive-font($size) {
+  font-size: $size + rem;
+}
+
+// 📌 Mixin para media queries flexibles
+@mixin breakpoint($size) {
+  @if $size ==sm {
+    @media (max-width: 576px) {
+      @content;
+    }
+  }
+
+  @else if $size ==md {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $size ==lg {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+}
+
+// 📌 Mixin para flexbox rápido
+@mixin flexbox($align: center, $justify: center, $direction: row) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}

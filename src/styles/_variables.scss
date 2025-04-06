@@ -1,0 +1,29 @@
+// Variables globales (colores, tipografías, etc.)
+
+// General Colors
+$color-primary: #DE203A;
+$color-secondary: #FFFAFB;
+
+//Theme Light
+$color-light-bg: #c2a8a8da;
+$color-light-text: #141414;
+
+//Them Dark
+$color-dark-bg: #121212;
+$color-dark-text: #E0D1D1;
+
+//Variables dinamicas
+:root {
+    --bg-color:#{$color-dark-bg};
+    --text-color:#{$color-dark-text};
+}
+
+[data-theme="light"] {
+    --bg-color:#{$color-light-bg};
+    --text-color:#{$color-light-text};
+}
+
+
+
+// 🔤 Tipografía
+$fuente-principal: 'Roboto', sans-serif;

@@ -1,0 +1,16 @@
+@use '../variables.scss' as *;
+@use '../mixins.scss' as *;
+
+.persistant-bar{
+    @include flexbox(center,space-between,center);
+    padding-inline: 5%;
+    width: 100%;
+    height: 8rem;
+    background-color: $color-primary;
+    color:$color-dark-text;
+    
+    .hamburger-right{
+        width: 35px;
+        height: 35px;
+    }
+}

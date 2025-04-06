@@ -1,0 +1,21 @@
+@use '@/styles/mixins' as *;
+
+.location-cards {
+    @include flexbox(center, center, row);
+    gap: 2rem;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    min-height: 350px;
+    width: 70%;
+
+    align-items: center;
+
+    @include breakpoint(md) {
+        width: 90%;
+    }
+
+    @include breakpoint(sm) {
+        flex-direction: column;
+        width: 100%;
+    }
+}

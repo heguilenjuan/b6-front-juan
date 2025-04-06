@@ -1,0 +1,61 @@
+@use './variables.scss' as *;
+@use './mixins.scss' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: url('../assets/icons/logo.webp');
+    backdrop-filter: blur(1px);
+    background-size: 250px;
+    background-blend-mode: overlay;
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+    font-family: $fuente-principal;
+    font-size: 1.6rem;
+    line-height: 1.6;
+
+    @include breakpoint(sm) {
+        font-size: 1.4rem;
+        line-height: 1.4;
+    }
+}
+
+h1 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 900;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 500;
+}
+
+p {
+    font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: $color-dark-text;
+    transition: color 0.3s ease;
+
+}
+
+
+.no-scroll {
+    overflow: hidden !important;
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+}

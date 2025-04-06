@@ -1,0 +1,28 @@
+@use '@/styles/mixins' as *;
+
+.map {
+    padding: 2rem;
+    width: 70%;
+    margin: 0 auto;
+
+    @include breakpoint(md) {
+        width: 90%;
+    }
+
+    @include breakpoint(sm) {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.map-container {
+    width: auto;
+    height: 500px;
+    z-index: 0;
+    border-radius: 10px;
+
+    @include breakpoint(sm) {
+        border-radius: 0;
+    }
+
+}

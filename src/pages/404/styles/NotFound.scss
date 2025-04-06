@@ -1,0 +1,72 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables.scss' as *;
+
+.page-404 {
+    @include flexbox(center, center, column);
+    height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+    gap: 16px;
+}
+
+.logo-404 {
+    width: 100px;
+    margin-bottom: 12px;
+    animation: fadeIn 1s ease;
+    background-color: white;
+    border-radius: 100%;
+    padding: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.page-404 h1 {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: $color-secondary;
+    animation: pop 0.5s ease-in-out;
+}
+
+.page-404 p {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    max-width: 400px;
+    line-height: 1.5;
+}
+
+.page-404 a {
+    font-size: 1.8rem;
+    text-decoration: underline;
+    color: $color-secondary;
+    transition: opacity 0.3s ease;
+}
+
+.page-404 a:hover {
+    opacity: 0.6;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

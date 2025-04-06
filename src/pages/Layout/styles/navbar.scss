@@ -1,0 +1,83 @@
+@use '@/styles/mixins.scss' as *;
+
+.navbar-container {
+    @include flexbox(center, space-evenly, row);
+    width: 100%;
+    max-height: 100%;
+    .nav-button {
+        @include flexbox(center, center, column);
+
+        .icon {
+            font-size: 3rem;
+
+            @include breakpoint(sm) {
+                font-size: 1rem;
+            }
+
+            @include breakpoint(md) {
+                font-size: 2.3rem;
+            }
+        }
+
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:focus-visible {
+            outline: 3px solid #007bff;
+            border-radius: 8px;
+        }
+    }
+
+
+    @include breakpoint(sm) {
+        justify-content: space-between;
+        padding: 2rem;
+    }
+}
+
+.active {
+    border-bottom: 3px solid white;
+    padding-bottom: 0.5rem;
+}
+
+.navbar-hamburger {
+    @include flexbox(start, space-between, column);
+    width: 100%;
+    gap: 2.5rem;
+
+    .nav-button {
+        @include flexbox(center, row);
+        gap: 2rem;
+        transition: 0.5ms;
+
+        .icon {
+            width: 25px;
+            height: 25px;
+
+            @include breakpoint(sm) {
+                font-size: 3rem;
+            }
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        &:hover {
+            opacity: 0.5;
+        }
+
+        &:focus-visible {
+            outline: 3px solid #007bff;
+            border-radius: 8px;
+        }
+
+        span {
+            font-size: 2rem;
+        }
+    }
+
+
+}

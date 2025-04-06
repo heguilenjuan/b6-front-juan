@@ -1,0 +1,15 @@
+@use '../mixins' as *;
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    
+    .persistant-bar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        
+    }
+
+}

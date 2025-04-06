@@ -1,0 +1,16 @@
+@use '@/styles/mixins.scss' as *;
+@use '@/styles/variables' as *;
+
+.coupons-mobile {
+    @include flexbox(center, space-between, column);
+    gap: 3rem;
+    width: 95%;
+    margin: 0 auto;
+    padding-block: 2rem;
+
+    .coupons {
+        height: 500px;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+}
