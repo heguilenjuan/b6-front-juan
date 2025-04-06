@@ -13,13 +13,9 @@ html {
 }
 
 body {
-    background-color: var(--bg-color);
-    background-image: url('../assets/icons/logo.webp');
-    backdrop-filter: blur(1px);
+    background-color: $color-dark-bg;
     background-size: 250px;
-    background-blend-mode: overlay;
-    color: var(--text-color);
-    transition: background 0.3s ease, color 0.3s ease;
+    color: $color-dark-text;
     font-family: $fuente-principal;
     font-size: 1.6rem;
     line-height: 1.6;
