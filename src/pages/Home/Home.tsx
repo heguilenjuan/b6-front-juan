@@ -66,7 +66,7 @@ const Home = () => {
             status: "activate",
             imageUrl: promo2
         },
- 
+
 
     ]
 
@@ -76,7 +76,9 @@ const Home = () => {
             <Carousel data={banners} isArrow={false} isIndicator={true} />
             {
                 isMobile ?
-                    <Carousel data={promos} isArrow={true} isIndicator={false} carouselTitle='Big Promos!' isAutoPlay={false} />
+                    <section>
+                        <Carousel data={promos} isArrow={true} isIndicator={false} carouselTitle='Big Promos!' isAutoPlay={false} />
+                    </section>
                     :
                     <DesktopPromo data={promos} />
             }

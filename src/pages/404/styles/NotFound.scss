@@ -4,8 +4,8 @@
 .page-404 {
     @include flexbox(center, center, column);
     height: 100vh;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: $color-dark-bg;
+    color: $color-dark-text;
     text-align: center;
     padding: 20px;
     gap: 16px;

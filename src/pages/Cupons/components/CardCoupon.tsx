@@ -4,6 +4,9 @@ import useIsMobile from "@/hooks/useIsMobile";
 import StarIcon from '@mui/icons-material/Star';
 import heartSVG from '@/assets/icons/heartSvg.svg';
 
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+
 import '../styles/CardCoupon.scss'
 
 const CardCoupon = ({ coupon }: any) => {
@@ -14,9 +17,9 @@ const CardCoupon = ({ coupon }: any) => {
 
     const isSelected = selectedCoupon?.id === coupon.id;
     const mostrarBoton = isMobile ? couponActivo === coupon.id.toString() : isSelected;
- /*    const handleObtenerCupon = (id: any) => {
-        // Acá hacés lo que quieras con el ID: redirigir, mostrar modal, etc.
-    } */
+    /*    const handleObtenerCupon = (id: any) => {
+           // Acá hacés lo que quieras con el ID: redirigir, mostrar modal, etc.
+       } */
 
 
     const handleClickCard = () => {
@@ -29,6 +32,17 @@ const CardCoupon = ({ coupon }: any) => {
             <div className="coupon" onClick={handleClickCard}>
                 {/* imagen */}
                 <img src={coupon.conditions.ids[0]} alt="Cupón" className="coupon-image" />
+
+                {/* btn mas o menos en mobile */}
+                {isMobile ?
+                    mostrarBoton ?
+                        <ExpandLessIcon className="coupon-icon-mobile"/>
+                        :
+                        <ExpandMoreIcon className="coupon-icon-mobile" />
+
+                    :
+
+                    null}
 
                 {/* descuentos */}
                 <div className="text-discount">
@@ -59,7 +73,7 @@ const CardCoupon = ({ coupon }: any) => {
                         {coupon.description}
                     </span>
                     <button
-                       /*  onClick={() => handleObtenerCupon(coupon.id)} */
+                        /*  onClick={() => handleObtenerCupon(coupon.id)} */
                         className="btn-coupon"
                     >
                         Obtener cupón

@@ -13,7 +13,7 @@
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     width: 75%;
-    color: var(--text-color);
+    color: $color-dark-text;
     padding-block: 1.5rem;
     row-gap: 2rem;
     column-gap: 1.5rem;

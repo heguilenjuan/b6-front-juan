@@ -20,6 +20,7 @@ const CuponsMobile = () => {
         {coupons ? coupons.map((coupon) => (
           <div key={coupon.id} onClick={() => selectCoupon(coupon)}>
             <CardCoupon coupon={coupon} />
+           
           </div>
 
         )) : null}

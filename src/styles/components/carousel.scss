@@ -2,6 +2,7 @@
 
 .carousel {
     @include flexbox(center, center, column);
+    padding-block: 2rem;
 
     .carousel-title {
         font-size: 3rem;
