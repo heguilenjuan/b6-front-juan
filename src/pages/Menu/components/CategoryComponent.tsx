@@ -13,21 +13,21 @@ interface CategoriesProps {
 
 const CategoryComponent = ({ categories, onSelectCategory }: CategoriesProps) => {
     return (
-        <div className="slider-container">
+        <nav className="slider-container">
             {categories.map((category) => (
-                <div className="slide-item" key={category.id}>
-                    <div
-                        key={category.id}
+                <div className="slide-item" key={`category-${category.id}`}>
+                    <button
                         onClick={() => onSelectCategory(category.title)}
+                        aria-label={`Seleccionar categoria ${category.title}`}
                     >
                         <div className="content-link">
-                            <img src={category.imgCategory} alt={category.title} />
+                            <img src={category.imgCategory} alt={`Imagen de la categoria ${category.title}`} />
                             <p>{category.title}</p>
                         </div>
-                    </div>
+                    </button>
                 </div>
             ))}
-        </div>
+        </nav>
     );
 };
 

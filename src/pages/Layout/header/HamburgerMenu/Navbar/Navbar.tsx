@@ -9,7 +9,7 @@ import '@/pages/Layout/styles/navbar.scss'
 
 
 
-const Navbar = () => {
+const Navbar = ({ isVisible }: any) => {
 
   const navItems = [
     {
@@ -33,18 +33,27 @@ const Navbar = () => {
       href: "/location"
 
     }
-    ,{
-      icon:PersonIcon,
-      label:"Iniciar sesion",
-      href:"/login"
+    , {
+      icon: PersonIcon,
+      label: "Iniciar sesion",
+      href: "/login"
     }
   ]
 
   return (
-    <nav className="navbar-hamburger ">
+    <nav
+      className="navbar-hamburger"
+      aria-hidden={isVisible ? "false" : "true"}
+      hidden={!isVisible}
+    >
       {navItems.map((item, index) => {
-        return <NavButton key={index} icon={item.icon} label={item.label} href
-          ={item.href} />
+        return <NavButton
+          key={`${index}-navItem`}
+          icon={item.icon}
+          label={item.label}
+          href={item.href}
+          tabIndex={isVisible ? 0 : -1}
+        />
       })}
     </nav>
   )

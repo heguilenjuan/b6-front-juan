@@ -5,12 +5,19 @@
 .hamburger-content {
     position: relative;
 
-    .hamburger-icon {
-        cursor: pointer;
-        width: 35px;
-        height: 35px;
+    .hamburger-btn {
+        background-color: transparent;
+        border: transparent;
+        color: inherit;
+
+        .hamburger-icon {
+            cursor: pointer;
+            width: 35px;
+            height: 35px;
+        }
     }
-  
+
+
     .hamburger-menu {
         position: fixed;
         top: 0;
@@ -35,7 +42,7 @@
         padding: 2rem;
     }
 
-    .hambuerger-content{
+    .hambuerger-content {
         display: flex;
         padding-inline: 3.8rem;
         padding-block: 2rem;
@@ -43,7 +50,7 @@
         justify-content: space-between;
         height: 100%;
         width: 100%;
-    
+
     }
 
     .open-menu {
@@ -53,7 +60,8 @@
     .close-menu {
         transform: translateX(-100%);
     }
-    .hamburger-right{
+
+    .hamburger-right {
         width: 35px;
         height: 35px;
     }

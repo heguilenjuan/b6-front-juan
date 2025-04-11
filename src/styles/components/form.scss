@@ -1,0 +1,68 @@
+@use '@/styles/variables.scss' as *;
+
+
+.form {
+    &-group {
+        margin-bottom: 2rem;
+    }
+
+    &-label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    &-input {
+        width: 100%;
+        padding: 0.8rem 1.2rem;
+        font-size: 1.6rem;
+        border: 1px solid #ccc;
+        border-radius: 0.4rem;
+
+        &.has-error {
+            border-color: red;
+        }
+    }
+
+    &-error {
+        color: red;
+        font-size: 1.4rem;
+        margin-top: 0.4rem;
+    }
+
+    &-hint {
+        color: #666;
+        font-size: 1.4rem;
+        margin: 0.4rem;
+
+    }
+
+    &-button{
+        width: 100%;
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+        border-radius: 0.6rem;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s ease;
+        font-weight: 600;
+
+        &--primary{
+            background-color: $color-primary;
+            color:white;
+        }
+
+        &--secondary{
+            background-color: grey;
+            color:black;
+            border:1px solid green;
+
+           //hay que estilar mejor
+        }
+        &:disabled{
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+    }
+}

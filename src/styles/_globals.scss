@@ -8,22 +8,43 @@
 }
 
 html {
-    font-size: 62.5%; // 1rem = 10px
+    font-size: 60%; // 1rem = 10px
     scroll-behavior: smooth;
 }
 
 body {
+    position: relative;
     background-color: $color-dark-bg;
-    background-size: 250px;
     color: $color-dark-text;
     font-family: $fuente-principal;
     font-size: 1.6rem;
     line-height: 1.6;
 
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url('../assets/images/background.png');
+        background-size: 1500px;
+        background-repeat: repeat;
+        filter: brightness(0.2); // Oscurece solo la imagen
+        z-index: -1;
+        pointer-events: none;
+    }
+
     @include breakpoint(sm) {
         font-size: 1.4rem;
-        line-height: 1.4;
+        line-height: 1.6;
     }
+}
+
+
+
+main {
+    height: 100%;
 }
 
 h1 {
@@ -54,4 +75,12 @@ a {
     height: 100vh;
     position: fixed;
     width: 100vw;
+}
+
+
+footer{
+    background-color: #1f1f1f;
+    height: 25rem;
+    width: 100%;
+    flex-shrink:1;
 }

@@ -29,19 +29,27 @@ const CardCoupon = ({ coupon }: any) => {
     };
     return (
         <>
-            <div className="coupon" onClick={handleClickCard}>
+            <article
+                role="button"
+                aria-expanded={mostrarBoton ? "true" : "false"}
+                className="coupon"
+                tabIndex={0}
+                onClick={handleClickCard}
+            >
                 {/* imagen */}
-                <img src={coupon.conditions.ids[0]} alt="Cupón" className="coupon-image" />
+                <img
+                    src={coupon.conditions.ids[0]}
+                    alt={`Imagen del cupón ${coupon.name}`}
+                    className="coupon-image" />
 
                 {/* btn mas o menos en mobile */}
                 {isMobile ?
                     mostrarBoton ?
-                        <ExpandLessIcon className="coupon-icon-mobile"/>
+                        <ExpandLessIcon className="coupon-icon-mobile" aria-label="Ocultar detalles" />
                         :
-                        <ExpandMoreIcon className="coupon-icon-mobile" />
+                        <ExpandMoreIcon className="coupon-icon-mobile" aria-label="Mostrar detalles" />
 
                     :
-
                     null}
 
                 {/* descuentos */}
@@ -54,31 +62,38 @@ const CardCoupon = ({ coupon }: any) => {
                 <div className='line-dotted top'></div>
                 <div className='line-dotted bottom'></div>
 
-                <div className="coupon-name">
-                    <StarIcon className="star-icon" />
+                <h3 className="coupon-name" id={`coupon-title-${coupon.id}`}>
+                    <StarIcon className="star-icon" aria-hidden="true" />
                     {coupon.name}
-                    <StarIcon className="star-icon" />
-                </div>
+                    <StarIcon className="star-icon" aria-hidden="true" />
+                </h3>
 
                 {/* heart */}
                 <div className="img-heart">
-                    <img src={heartSVG} alt="Favorito" />
+                    <img
+                        src={heartSVG}
+                        alt="Imagen de corazon de big six"
+                    />
                 </div>
 
-                <div className='slash'></div>
-            </div>
+                <div className='slash' aria-hidden="true"></div>
+            </article>
             {mostrarBoton && (
-                <div className="btn-coupon-box" key={`${coupon.id}-details`}>
-                    <span className='text-coupon'>
+                <section
+                    className="btn-coupon-box"
+                    key={`${coupon.id}-details`}
+                    aria-live="polite"
+                >
+                    <p className='text-coupon'>
                         {coupon.description}
-                    </span>
+                    </p>
                     <button
                         /*  onClick={() => handleObtenerCupon(coupon.id)} */
                         className="btn-coupon"
                     >
                         Obtener cupón
                     </button>
-                </div>
+                </section>
             )}
         </>
 

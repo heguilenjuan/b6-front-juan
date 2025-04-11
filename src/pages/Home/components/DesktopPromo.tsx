@@ -7,8 +7,15 @@ interface DestktopPromoProps {
 
 const DesktopPromo = ({ data }: DestktopPromoProps) => {
   return (
-    <section className="promotions">
-      <h2 className="promotions__title">Big Promos</h2>
+    <section
+      className="promotions"
+      aria-labelledby="promo-title"
+    >
+      <h2
+        id="promo-title"
+        className="promotions__title">
+        Big Promos
+      </h2>
       <div className="promotions__grid">
         {data.map((promo, index) => {
           // Aplicamos clases automáticas según la posición en el array
@@ -16,12 +23,15 @@ const DesktopPromo = ({ data }: DestktopPromoProps) => {
             index % 3 === 2
               ? "promotion-card--wide"
               : index % 3 === 1
-              ? "promotion-card--highlighted"
-              : "";
+                ? "promotion-card--highlighted"
+                : "";
 
           return (
-            <div key={promo.id || index} className={`promotion-card ${cardClass}`}>
-              <img src={promo.imageUrl} alt={promo.name} />
+            <div key={`${promo.id}-promo`} className={`promotion-card ${cardClass}`}>
+              <img
+                src={promo.imageUrl}
+                alt={`imagen de promocion ${promo.name}`}
+                loading="lazy" />
             </div>
           );
         })}

@@ -22,25 +22,25 @@ const Home = () => {
 
     const banners = [
         {
-            id: "123",
+            id: "1",
             name: "Promo santander libertadores",
             status: "activate",
             imageUrl: banner1
         },
         {
-            id: "123",
+            id: "6",
             name: "Promo santander libertadores",
             status: "activate",
             imageUrl: banner2
         },
         {
-            id: "123",
+            id: "5",
             name: "Promo santander libertadores",
             status: "activate",
             imageUrl: banner3
         },
         {
-            id: "123",
+            id: "4",
             name: "Promo santander libertadores",
             status: "activate",
             imageUrl: promo4
@@ -49,13 +49,13 @@ const Home = () => {
 
     const promos = [
         {
-            id: "12",
+            id: "10",
             name: "Promo santander libertadores",
             status: "activate",
             imageUrl: promo1
         },
         {
-            id: "12",
+            id: "11",
             name: "Promo santander libertadores",
             status: "activate",
             imageUrl: promo3
@@ -76,8 +76,13 @@ const Home = () => {
             <Carousel data={banners} isArrow={false} isIndicator={true} />
             {
                 isMobile ?
-                    <section>
-                        <Carousel data={promos} isArrow={true} isIndicator={false} carouselTitle='Big Promos!' isAutoPlay={false} />
+                    <section aria-label='Mobile promos'>
+                        <Carousel 
+                        data={promos} 
+                        isArrow={true} 
+                        isIndicator={false} 
+                        carouselTitle='Big Promos!' 
+                        isAutoPlay={false} />
                     </section>
                     :
                     <DesktopPromo data={promos} />

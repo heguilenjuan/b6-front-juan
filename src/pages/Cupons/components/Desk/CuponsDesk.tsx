@@ -30,7 +30,7 @@ const CuponsDesk = () => {
           <div className="coupons-list">
             {coupons && coupons.map((coupon) => (
               <div
-                key={coupon.id}
+                key={`cupon-${coupon.id}`}
                 className="coupon-item"
                 onClick={() => {
                   selectCoupon(coupon);

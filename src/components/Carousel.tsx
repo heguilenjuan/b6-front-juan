@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import '../styles/components/carousel.scss'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -58,36 +57,66 @@ const Carousel = ({ data, isArrow = true, isIndicator = true, carouselTitle, isA
     }, [isAutoPlay, slide]);
 
     return (
-        <div className={carouselTitle != undefined ? 'carousel isTitle' : 'carousel'}>
+        <section
+            className={carouselTitle != undefined ? 'carousel isTitle' : 'carousel'}
+            role='region'
+            aria-roledescription="carousel"
+            aria-label={carouselTitle || "Carrusel de promociones"}
+        >
             {carouselTitle && <h2 className='carousel-title'>{carouselTitle}</h2>}
             <div
                 className="carousel-container"
                 onTouchStart={handleTouchStart}
                 onTouchEnd={handleTouchEnd}
             >
-                {isArrow && <ArrowBackIosIcon className='arrow arrow-left' onClick={previousSlide} />}
+                {isArrow &&
+                    <button
+                        onClick={previousSlide}
+                        aria-label='Anterior'
+                    >
+                        <ArrowBackIosIcon className='arrow arrow-left' />
+                    </button>
+
+                }
                 {data?.map((item, index) => (
                     <img
                         className={slide === index ? "slide" : "slide slide-hidden"}
                         src={item.imageUrl}
-                        alt='imagen-carousel'
+                        alt={`imagen del carusel de promociones, ${item.name}`}
                         key={`${index}-imageCarousel`}
+                        aria-hidden={`${slide !== index}`}
+                        id={`slide-${index}`}
                     />
                 ))}
-                {isArrow && <ArrowForwardIosIcon className='arrow arrow-right' onClick={nextSlide} />}
+                {isArrow &&
+
+                    <button
+                        onClick={nextSlide}
+                        aria-label='Siguiente'>
+                        <ArrowForwardIosIcon className='arrow arrow-right' />
+                    </button>
+                }
                 {isIndicator && (
-                    <span className='indicators'>
+                    <div
+                        className='indicators'
+                        role='tablist'
+                        aria-label={'Indicador de carrusel'}
+                    >
                         {data?.map((_, index) => (
                             <button
                                 onClick={() => setSlide(index)}
                                 className={slide === index ? "indicator" : "indicator indicator-inactive"}
                                 key={`indicator-${index}`}
+                                role="tab"
+                                aria-label={`Mostrar slide ${index}`}
+                                aria-selected={`${slide == index}`}
+                                aria-controls={`slide-${index}`}
                             ></button>
                         ))}
-                    </span>
+                    </div>
                 )}
             </div>
-        </div>
+        </section>
     );
 };
 

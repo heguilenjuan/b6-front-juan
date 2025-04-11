@@ -3,9 +3,9 @@ import '@/styles/components/persistantBar.scss'
 
 const PersistentBar = memo(({ children }: { children: ReactNode }) => {
     return (
-        <div className="persistant-bar">
+        <header className="persistant-bar">
             {children}
-        </div>
+        </header>
     )
 })
 

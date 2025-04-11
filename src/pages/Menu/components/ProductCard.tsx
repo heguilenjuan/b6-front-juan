@@ -10,13 +10,19 @@ const ProductCard = ({ products }: CardProps) => {
   return (
     <>
       {products.map((product: any) => (
-        <Link className="card" key={`producto-b6-${product.name}`} to={`/product/details/${product.id}`}>
-          <img src={product.imageUrl} alt={product.name} className="card__image" />
-          <div className="card__content">
-            <h3 className="card__title">{product.name}</h3>
-            <p className="card__description">{product.description}</p>
-          </div>
-        </Link>
+        <article key={`producto-b6-${product.name}`} >
+          <Link
+            className="card"
+            to={`/product/details/${product.id}`}
+            aria-label={`Ver detalle de el producto ${product.name}`}
+          >
+            <img src={product.imageUrl} alt={`Image del producto ${product.name}`} className="card__image" />
+            <div className="card__content">
+              <h3 className="card__title">{product.name}</h3>
+              <p className="card__description">{product.description}</p>
+            </div>
+          </Link>
+        </article>
       ))}
     </>
   );
