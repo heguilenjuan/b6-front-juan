@@ -4,13 +4,12 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base:'/',
+  base: '/b6-front-juan/',  // Esto indica el subdirectorio donde estará el sitio
   plugins: [react()],
-  assetsInclude:["**/*.PNG"],
-  resolve:{
-    alias:{
+  assetsInclude: ["**/*.PNG"],
+  resolve: {
+    alias: {
       '@': path.resolve(__dirname, 'src'),
-    }
+    },
   },
-  
 })

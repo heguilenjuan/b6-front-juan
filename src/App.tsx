@@ -17,7 +17,7 @@ const Location = lazy(() => import("@/pages/Location/Location"));
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/b6-front-juan">
       <Suspense fallback={<Loading />}>
         <Routes>
           <Route path="/" element={<Home />} />
