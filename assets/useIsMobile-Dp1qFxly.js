@@ -1,0 +1,1 @@
+import{r as t}from"./index-DA45Lbkd.js";const o=(e=768)=>{const[i,n]=t.useState(window.innerWidth<e);return t.useEffect(()=>{const s=()=>n(window.innerWidth<e);return window.addEventListener("resize",s),()=>window.removeEventListener("resize",s)},[e]),i};export{o as u};
