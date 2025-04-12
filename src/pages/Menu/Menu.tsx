@@ -6,7 +6,8 @@ import fastfood from '@/assets/images/menu/hamburguesa.png'
 import veggie from '@/assets/images/menu/veggie.png'
 import cafeteria from '@/assets/images/menu/cafeteria.png'
 import postres from '@/assets/images/menu/postres.png'
-import minibox from '@/assets/images/menu/minibox.png'
+import minibox from '@/assets/images/menu/minibox.png' 
+
 
 
 import producto1 from '@/assets/images/product/WEBAPP B6-Menu- PAMPEANA.jpg';

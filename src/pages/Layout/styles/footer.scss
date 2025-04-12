@@ -1,0 +1,114 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/variables' as *;
+
+.footer {
+    margin-top: 3rem;
+    background-color: #1f1f1f;
+    max-height: 30rem;
+    min-height: 25rem;
+    width: 100%;
+    flex-shrink: 1;
+
+    &__nav-brand {
+        width: 70%;
+        min-height: 20rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-top: 2.5rem;
+
+
+        @include breakpoint(sm) {
+            width: 100%;
+            min-height: 12rem;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+
+        }
+
+        figure {
+            padding: 0.6rem;
+            align-self: center;
+        }
+
+        &-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: auto;
+
+            li {
+                padding: 0.2rem;
+            }
+
+            @include breakpoint(sm) {
+                grid-template-columns: repeat(3, 1fr);
+                width: 85%;
+                text-align: center;
+                gap: 1.1rem;
+                padding-bottom: 2rem;
+
+                li {
+                    max-width: 90%
+                }
+            }
+
+        }
+
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: column;
+        width: 8rem;
+
+
+        &-list {
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+
+            .social-icon {
+                width: 35px;
+                height: 35px;
+
+                @include breakpoint(sm) {
+                    width: 25px;
+                    height: 25px;
+                    margin: 0.5rem;
+                }
+
+            }
+
+        }
+
+        @include breakpoint(sm) {
+            align-items: center;
+            width: auto;
+
+        }
+    }
+
+    &__legal-brand {
+        width: 75%;
+        margin: 1rem auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+
+        @include breakpoint(sm) {
+            width: 90%;
+        }
+
+    }
+
+
+    a:hover {
+        color: $color-primary;
+    }
+}
